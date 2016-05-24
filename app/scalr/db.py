@@ -136,7 +136,7 @@ class DBConnection(object):
 
         try:
             cursor = self.get_cursor()
-            cursor.execute('SELECT val FROM ScalrValues ORDER BY id DESC')
+            cursor.execute('SELECT val FROM ScalrValues ORDER BY id DESC LIMIT 100')
 
         except pymysql.MySQLError as err:
             error_code = err.args[0]
